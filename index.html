@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rising Star Public School – Excellence in Education</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+  </style>
+</head>
+<body>
+
+<!-- ADMISSION MODAL -->
+<div class="modal-backdrop" id="admissionModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-logo">
+      <img src="images/logo.jpg" alt="Rising Star Logo" />
+    </div>
+    <h2>Admissions Open 2025–26</h2>
+    <p>Begin your child's journey to excellence. Fill the form and our team will get back to you.</p>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Student Name</label>
+        <input type="text" placeholder="Full name" />
+      </div>
+      <div class="form-group">
+        <label>Parent Name</label>
+        <input type="text" placeholder="Full name" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+91 XXXXX XXXXX" />
+      </div>
+      <div class="form-group">
+        <label>Class Applying For</label>
+        <select>
+          <option>Select Class</option>
+          <option>Nursery</option>
+          <option>KG</option>
+          <option>Class 1</option>
+          <option>Class 2</option>
+          <option>Class 3</option>
+          <option>Class 4</option>
+          <option>Class 5</option>
+          <option>Class 6-8</option>
+          <option>Class 9-10</option>
+        </select>
+      </div>
+    </div>
+    <button class="submit-btn" onclick="handleFormSubmit()">Submit Enquiry →</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo2.png" alt="Rising Star Logo" />
+      <div class="nav-logo-text">
+        <span>Rising Star</span>
+        <span>Public School</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="about.html" style="display:flex;align-items:center;gap:4px">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html#vision">Our Vision</a></li>
+          <li><a href="about.html#mission">Our Mission</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#" class="highlight" onclick="openModal();return false;">Get Quote</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(10,22,40,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:20px;">
+  <button onclick="toggleMenu()" style="position:absolute;top:20px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">×</button>
+  <a href="index.html" onclick="toggleMenu()" style="color:white;font-size:1.2rem;text-decoration:none;font-weight:600;">Home</a>
+  <a href="about.html" onclick="toggleMenu()" style="color:white;font-size:1.2rem;text-decoration:none;font-weight:600;">About</a>
+  <a href="gallery.html" onclick="toggleMenu()" style="color:white;font-size:1.2rem;text-decoration:none;font-weight:600;">Gallery</a>
+  <a href="contact.html" onclick="toggleMenu()" style="color:white;font-size:1.2rem;text-decoration:none;font-weight:600;">Contact</a>
+  <a href="#" onclick="openModal();toggleMenu();return false;" style="background:var(--gold,#c9a227);color:#0a1628;padding:12px 32px;border-radius:50px;font-size:1rem;font-weight:700;text-decoration:none;">Get Quote</a>
+</div>
+
+<!-- HERO SLIDER -->
+<section id="hero">
+  <div class="slider-track" id="sliderTrack">
+
+    <!-- Slide 1 -->
+    <div class="slide" style="background-image:url('images/1.jpg')">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-badge">🏆 Award Winning School</span>
+        <h1 class="slide-title">Nurturing Tomorrow's<br>Leaders Today</h1>
+        <p class="slide-subtitle">Rising Star Public School – where every child's potential is recognized, celebrated, and empowered to shine.</p>
+        <div class="slide-btns">
+          <a href="#" class="btn-primary" onclick="openModal();return false;">Apply for Admission</a>
+          <a href="about.html" class="btn-outline">Discover More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" style="background-image:url('images/2.jpg')">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-badge">⭐ Academic Excellence</span>
+        <h1 class="slide-title">Celebrating Student<br>Achievements</h1>
+        <p class="slide-subtitle">Our students consistently excel at competitions, events, and academics — proving excellence is our standard.</p>
+        <div class="slide-btns">
+          <a href="gallery.html" class="btn-primary">View Gallery</a>
+          <a href="contact.html" class="btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide" style="background-image:url('images/4.jpg')">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-badge">🎓 Holistic Education</span>
+        <h1 class="slide-title">Where Education<br>Meets Inspiration</h1>
+        <p class="slide-subtitle">A vibrant learning community that fosters creativity, critical thinking, and character in every student.</p>
+        <div class="slide-btns">
+          <a href="#" class="btn-primary" onclick="openModal();return false;">Enquire Now</a>
+          <a href="about.html" class="btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide" style="background-image:url('images/5.jpg')">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-badge">💫 Proud Moments</span>
+        <h1 class="slide-title">Building Bright<br>Futures Every Day</h1>
+        <p class="slide-subtitle">From classrooms to competitions, our students carry the Rising Star spirit with pride and excellence.</p>
+        <div class="slide-btns">
+          <a href="#" class="btn-primary" onclick="openModal();return false;">Join Our Family</a>
+          <a href="gallery.html" class="btn-outline">Our Gallery</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Arrows -->
+  <div class="slider-arrows">
+    <button class="arrow-btn" onclick="moveSlider(-1)">&#8592;</button>
+    <button class="arrow-btn" onclick="moveSlider(1)">&#8594;</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="slider-dots" id="sliderDots"></div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number" data-count="1500">0</span>
+      <span class="stat-label">Happy Students</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-count="85">0</span>
+      <span class="stat-label">Expert Teachers</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-count="15">0</span>
+      <span class="stat-label">Years of Excellence</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-count="200">0</span>
+      <span class="stat-label">Awards Won</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about" style="padding:100px 0;background:#f4f7fc;overflow:hidden;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;" class="about-grid-resp">
+    
+    <div class="reveal from-left" style="position:relative;height:480px;">
+      <img src="images/4.jpg" alt="Students celebrating" style="position:absolute;top:0;left:0;width:75%;height:85%;object-fit:cover;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.15);" />
+      <img src="images/1.jpg" alt="Award ceremony" style="position:absolute;bottom:0;right:0;width:55%;height:55%;object-fit:cover;border-radius:20px;border:4px solid white;box-shadow:0 20px 60px rgba(0,0,0,0.15);" />
+      <div style="position:absolute;bottom:60px;left:-10px;background:var(--gold,#c9a227);color:#0a1628;padding:16px 20px;border-radius:16px;text-align:center;box-shadow:0 10px 30px rgba(201,162,39,0.4);z-index:5;">
+        <strong style="font-family:'Playfair Display',serif;font-size:1.8rem;display:block;">15+</strong>
+        <span style="font-size:0.72rem;font-weight:600;letter-spacing:1px;">Years of Excellence</span>
+      </div>
+    </div>
+
+    <div class="reveal from-right">
+      <span class="section-label">About Rising Star</span>
+      <h2 class="section-title">Empowering Students to Reach Their Full Potential</h2>
+      <p style="color:#718096;line-height:1.8;margin-bottom:16px;font-size:0.95rem;">
+        Rising Star Public School is a premier educational institution committed to providing a nurturing, inclusive, and academically rigorous environment. We believe every child is uniquely gifted and our role is to help them discover and develop those gifts.
+      </p>
+      <p style="color:#718096;line-height:1.8;margin-bottom:24px;font-size:0.95rem;">
+        With a blend of traditional values and modern pedagogy, our school has produced outstanding achievers in academics, sports, arts, and beyond. Our students don't just learn — they thrive.
+      </p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:500;">
+          <div style="width:34px;height:34px;background:rgba(26,58,107,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">🎓</div>
+          <span>CBSE Affiliated</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:500;">
+          <div style="width:34px;height:34px;background:rgba(26,58,107,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">🏆</div>
+          <span>Award Winning Faculty</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:500;">
+          <div style="width:34px;height:34px;background:rgba(26,58,107,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">💻</div>
+          <span>Smart Classrooms</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:500;">
+          <div style="width:34px;height:34px;background:rgba(26,58,107,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">🌿</div>
+          <span>Green Campus</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:500;">
+          <div style="width:34px;height:34px;background:rgba(26,58,107,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">🔬</div>
+          <span>Modern Science Labs</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:500;">
+          <div style="width:34px;height:34px;background:rgba(26,58,107,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">⚽</div>
+          <span>Sports & Activities</span>
+        </div>
+      </div>
+      <a href="about.html" class="btn-primary" style="display:inline-block;text-decoration:none;">Learn More About Us →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Ready to Give Your Child the Best Education?</h2>
+  <p>Join the Rising Star family — where bright futures begin. Admissions open for 2025–26.</p>
+  <div class="cta-btns">
+    <a href="#" class="btn-primary" onclick="openModal();return false;">Get a Quote</a>
+    <a href="contact.html" class="btn-outline">Contact Us</a>
+  </div>
+</div>
+
+<!-- GALLERY SECTION -->
+<section id="gallery-section" style="padding:100px 0;background:white;">
+  <div class="section-header" style="text-align:center;margin-bottom:50px;padding:0 30px;">
+    <span class="section-label">Our Moments</span>
+    <h2 class="section-title" style="text-align:center;">School Life in Pictures</h2>
+    <p style="color:#718096;max-width:500px;margin:0 auto;font-size:0.95rem;">Glimpses of our students' achievements, events, and everyday joy at Rising Star.</p>
+  </div>
+  
+  <div style="max-width:1100px;margin:0 auto;padding:0 30px;position:relative;overflow:hidden;">
+    <div id="galleryTrack" style="display:flex;gap:20px;transition:transform 0.5s ease;">
+      <div class="gallery-item reveal from-bottom" onclick="openLightbox('images/gallery/1.jpg','Award Ceremony 2024')">
+        <img src="images/gallery/1.jpg" alt="Award Ceremony" />
+        <div class="gallery-overlay"><span>Award Ceremony 2024</span></div>
+      </div>
+      <div class="gallery-item reveal from-bottom" style="transition-delay:0.1s" onclick="openLightbox('images/gallery/2.jpg','Student Achievement')">
+        <img src="images/gallery/2.jpg" alt="Student Achievement" />
+        <div class="gallery-overlay"><span>Student Achievement</span></div>
+      </div>
+      <div class="gallery-item reveal from-bottom" style="transition-delay:0.2s" onclick="openLightbox('images/gallery/3.jpg','Prize Distribution')">
+        <img src="images/gallery/3.jpg" alt="Prize Distribution" />
+        <div class="gallery-overlay"><span>Prize Distribution</span></div>
+      </div>
+      <div class="gallery-item reveal from-bottom" style="transition-delay:0.3s" onclick="openLightbox('images/gallery/4.jpg','Excellence Awards')">
+        <img src="images/gallery/4.jpg" alt="Excellence Awards" />
+        <div class="gallery-overlay"><span>Excellence Awards</span></div>
+      </div>
+      <div class="gallery-item reveal from-bottom" style="transition-delay:0.4s" onclick="openLightbox('images/gallery/5.jpg','Proud Achievers')">
+        <img src="images/gallery/5.jpg" alt="Proud Achievers" />
+        <div class="gallery-overlay"><span>Proud Achievers</span></div>
+      </div>
+    </div>
+  </div>
+  
+  <div style="text-align:center;margin-top:36px;">
+    <a href="gallery.html" class="view-more-btn">View Full Gallery →</a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why-us">
+  <div style="max-width:1100px;margin:0 auto;padding:0 30px;text-align:center;margin-bottom:50px;">
+    <span class="section-label" style="color:var(--gold,#c9a227);">Why Rising Star</span>
+    <h2 class="section-title" style="color:white;text-align:center;">What Makes Us Different</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal from-bottom">
+      <div class="why-icon">🎯</div>
+      <h3>Result-Oriented Curriculum</h3>
+      <p>Our carefully designed curriculum blends academic rigor with practical learning, ensuring students are prepared for life beyond school.</p>
+    </div>
+    <div class="why-card reveal from-bottom" style="transition-delay:0.1s">
+      <div class="why-icon">👩‍🏫</div>
+      <h3>Experienced & Caring Faculty</h3>
+      <p>Our teachers are more than educators — they are mentors who know each student by name and help them grow with love and guidance.</p>
+    </div>
+    <div class="why-card reveal from-bottom" style="transition-delay:0.2s">
+      <div class="why-icon">🏛️</div>
+      <h3>World-Class Infrastructure</h3>
+      <p>Modern classrooms, well-equipped labs, a vast library, digital tools, and sports facilities create a complete learning environment.</p>
+    </div>
+    <div class="why-card reveal from-bottom" style="transition-delay:0.3s">
+      <div class="why-icon">🌍</div>
+      <h3>Global Exposure</h3>
+      <p>Through workshops, competitions, cultural programs, and exchange opportunities, we prepare our students to be global citizens.</p>
+    </div>
+    <div class="why-card reveal from-bottom" style="transition-delay:0.4s">
+      <div class="why-icon">🎨</div>
+      <h3>Arts & Co-Curriculars</h3>
+      <p>From music and dance to robotics and debate, we offer diverse activities that nurture hidden talents and build confidence.</p>
+    </div>
+    <div class="why-card reveal from-bottom" style="transition-delay:0.5s">
+      <div class="why-icon">🛡️</div>
+      <h3>Safe & Inclusive Campus</h3>
+      <p>We maintain a zero-tolerance policy on bullying, ensuring every child feels safe, respected, and valued in our school family.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="padding:100px 0;background:#f4f7fc;">
+  <div style="text-align:center;margin-bottom:50px;padding:0 30px;">
+    <span class="section-label">Parent Voices</span>
+    <h2 class="section-title" style="text-align:center;">What Our Community Says</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal from-bottom">
+      <p class="testi-text">Rising Star has transformed my daughter completely. She went from being shy to winning inter-school competitions. The teachers here truly care about every child's growth.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Rekha Sharma</div>
+          <div class="testi-role">Parent of Class 6 Student</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal from-bottom" style="transition-delay:0.15s">
+      <p class="testi-text">The school's approach to education is unique. My son not only excels academically but has also developed a love for sports and arts. Best decision we made for his future.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name">Arvind Kumar</div>
+          <div class="testi-role">Parent of Class 9 Student</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal from-bottom" style="transition-delay:0.3s">
+      <p class="testi-text">Excellent infrastructure, highly qualified teachers, and a genuine focus on the overall development of children. We couldn't be happier with Rising Star Public School.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div>
+          <div class="testi-name">Priya Agarwal</div>
+          <div class="testi-role">Parent of Class 3 Student</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
+        <img src="images/logo.jpg" alt="Logo" style="height:45px;width:45px;border-radius:50%;object-fit:cover;border:2px solid var(--gold,#c9a227);" />
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:white;">Rising Star</div>
+          <div style="font-size:0.65rem;color:var(--gold,#c9a227);letter-spacing:2px;text-transform:uppercase;">Public School</div>
+        </div>
+      </div>
+      <p>Empowering young minds with knowledge, values, and the skills to succeed in a rapidly changing world. Together, we rise.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Facebook">f</a>
+        <a href="#" class="social-link" title="Instagram">📷</a>
+        <a href="#" class="social-link" title="YouTube">▶</a>
+        <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+        <a href="#" class="social-link" title="WhatsApp">💬</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">→ Home</a></li>
+        <li><a href="about.html">→ About Us</a></li>
+        <li><a href="gallery.html">→ Gallery</a></li>
+        <li><a href="contact.html">→ Contact</a></li>
+        <li><a href="#" onclick="openModal();return false;">→ Admissions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Academics</h4>
+      <ul>
+        <li><a href="#">→ Primary School</a></li>
+        <li><a href="#">→ Middle School</a></li>
+        <li><a href="#">→ Secondary School</a></li>
+        <li><a href="#">→ Science & Labs</a></li>
+        <li><a href="#">→ Sports Program</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item">
+        <span>📍</span>
+        <span>Rising Star Public School, Sector 5, Ghaziabad, Uttar Pradesh – 201001</span>
+      </div>
+      <div class="contact-item">
+        <span>📞</span>
+        <span>+91 98765 43210</span>
+      </div>
+      <div class="contact-item">
+        <span>✉️</span>
+        <span>info@risingstarpublicschool.in</span>
+      </div>
+      <div class="contact-item">
+        <span>⏰</span>
+        <span>Mon–Sat: 8:00 AM – 4:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom" style="max-width:1100px;margin:0 auto;">
+    <span>© 2026 Rising Star Public School. All rights reserved.</span>
+    <span>Designed By Brandkit innovation</span>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" style="display:none;" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+</div>
+
+<script>
+
+    
+  // ===== NAVBAR SCROLL =====
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // ===== SLIDER =====
+  let currentSlide = 0;
+  const totalSlides = 4;
+  const track = document.getElementById('sliderTrack');
+  const dotsContainer = document.getElementById('sliderDots');
+
+  // Create dots
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  function goToSlide(n) {
+    currentSlide = (n + totalSlides) % totalSlides;
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  function moveSlider(dir) { goToSlide(currentSlide + dir); }
+
+  // Auto-slide
+  setInterval(() => moveSlider(1), 5000);
+
+  // ===== MODAL =====
+  function openModal() { document.getElementById('admissionModal').style.display = 'flex'; }
+  function closeModal() { document.getElementById('admissionModal').style.display = 'none'; }
+  function handleFormSubmit() {
+    alert('Thank you! We will contact you soon.');
+    closeModal();
+  }
+
+  // Open modal on load
+  window.addEventListener('load', () => {
+    setTimeout(openModal, 800);
+  });
+
+  // Close modal on backdrop click
+  document.getElementById('admissionModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ===== MOBILE MENU =====
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+  }
+
+  // ===== SCROLL REVEAL =====
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ===== COUNTER ANIMATION =====
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count);
+        let current = 0;
+        const step = target / 60;
+        const timer = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = Math.floor(current) + '+';
+          if (current >= target) clearInterval(timer);
+        }, 25);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+  // ===== LIGHTBOX =====
+  function openLightbox(src, caption) {
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightboxImg').src = src;
+    lb.style.display = 'flex';
+  }
+  function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeModal(); closeLightbox(); }
+  });
+</script>
+</body>
+</html>

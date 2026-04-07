@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Rising Star Public School</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpg" alt="Logo" />
+      <div class="nav-logo-text"><span>Rising Star</span><span>Public School</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="about.html" style="display:flex;align-items:center;gap:4px;">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html#vision">Our Vision</a></li>
+          <li><a href="about.html#mission">Our Mission</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" style="color:var(--gold,#c9a227)!important;">Contact</a></li>
+      <li><a href="index.html" class="highlight">Get Quote</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div id="mobileMenu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(10,22,40,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:20px;">
+  <button onclick="toggleMenu()" style="position:absolute;top:20px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">×</button>
+  <a href="index.html" style="color:white;font-size:1.2rem;text-decoration:none;font-weight:600;">Home</a>
+  <a href="about.html" style="color:white;font-size:1.2rem;text-decoration:none;font-weight:600;">About</a>
+  <a href="gallery.html" style="color:white;font-size:1.2rem;text-decoration:none;font-weight:600;">Gallery</a>
+  <a href="contact.html" style="color:white;font-size:1.2rem;text-decoration:none;font-weight:600;">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div style="background:linear-gradient(135deg,#0a1628 0%,#1a3a6b 100%);padding:160px 30px 80px;text-align:center;position:relative;overflow:hidden;">
+  <span class="section-label">Get in Touch</span>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:white;margin:10px 0 16px;">Contact Us</h1>
+  <p style="color:rgba(255,255,255,0.7);font-size:1.05rem;max-width:500px;margin:0 auto;">We'd love to hear from you. Reach out for admissions, queries, or just to say hello.</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;font-size:0.85rem;color:rgba(255,255,255,0.5);">
+    <a href="index.html" style="color:var(--gold,#c9a227);text-decoration:none;">Home</a>
+    <span>›</span><span style="color:white;">Contact</span>
+  </div>
+</div>
+
+<!-- CONTACT INFO CARDS -->
+<section style="padding:70px 0 0;background:#f4f7fc;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="contact-cards-resp">
+    <div class="reveal from-bottom" style="background:white;border-radius:20px;padding:36px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+      <div style="width:60px;height:60px;background:linear-gradient(135deg,#0a1628,#1a3a6b);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 20px;">📍</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0a1628;margin-bottom:10px;">Visit Us</h3>
+      <p style="color:#718096;font-size:0.9rem;line-height:1.7;">Rising Star Public School,<br>Sector 5, Near City Park,<br>Ghaziabad, Uttar Pradesh – 201001</p>
+    </div>
+    <div class="reveal from-bottom" style="transition-delay:0.1s;background:white;border-radius:20px;padding:36px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+      <div style="width:60px;height:60px;background:linear-gradient(135deg,#c9a227,#f0c842);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 20px;">📞</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0a1628;margin-bottom:10px;">Call Us</h3>
+      <p style="color:#718096;font-size:0.9rem;line-height:1.7;">+91 98765 43210<br>+91 87654 32109<br><span style="font-size:0.82rem;">Mon–Sat: 8 AM – 4 PM</span></p>
+    </div>
+    <div class="reveal from-bottom" style="transition-delay:0.2s;background:white;border-radius:20px;padding:36px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+      <div style="width:60px;height:60px;background:linear-gradient(135deg,#1a3a6b,#2563eb);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 20px;">✉️</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0a1628;margin-bottom:10px;">Email Us</h3>
+      <p style="color:#718096;font-size:0.9rem;line-height:1.7;">info@risingstarpublicschool.in<br>admissions@risingstarpublicschool.in<br><span style="font-size:0.82rem;">We reply within 24 hours</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- MAP + FORM -->
+<section style="padding:60px 0 100px;background:#f4f7fc;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;" class="contact-main-resp">
+
+    <!-- MAP -->
+    <div class="reveal from-left">
+      <div style="background:white;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.08);">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224096.42765226302!2d77.26910684863281!3d28.694998199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sGhaziabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          width="100%" height="400" style="border:0;display:block;" allowfullscreen="" loading="lazy">
+        </iframe>
+        <div style="padding:24px 28px;border-top:1px solid #e2e8f0;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <img src="images/logo.jpg" alt="Logo" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--gold,#c9a227);" />
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-weight:700;color:#0a1628;">Rising Star Public School</div>
+              <div style="font-size:0.78rem;color:#718096;">Sector 5, Ghaziabad, Uttar Pradesh</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;">
+            <a href="https://maps.google.com" target="_blank" style="flex:1;padding:10px;background:#0a1628;color:white;border-radius:10px;text-align:center;text-decoration:none;font-size:0.85rem;font-weight:600;">Get Directions</a>
+            <a href="tel:+919876543210" style="flex:1;padding:10px;background:var(--gold,#c9a227);color:#0a1628;border-radius:10px;text-align:center;text-decoration:none;font-size:0.85rem;font-weight:600;">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="reveal from-right">
+      <div style="background:white;border-radius:20px;padding:40px;box-shadow:0 8px 30px rgba(0,0,0,0.08);">
+        <span class="section-label">Send a Message</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#0a1628;margin:8px 0 24px;line-height:1.2;">We're Here to Help</h2>
+
+        <div id="formSuccess" style="display:none;background:#ecfdf5;border:1px solid #10b981;border-radius:12px;padding:20px;margin-bottom:20px;color:#065f46;font-weight:500;text-align:center;">
+          ✅ Thank you! We'll get back to you within 24 hours.
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input id="cName" type="text" placeholder="Full name" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input id="cPhone" type="tel" placeholder="+91 XXXXX XXXXX" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input id="cEmail" type="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Subject *</label>
+          <select id="cSubject">
+            <option value="">Select Subject</option>
+            <option>Admission Enquiry</option>
+            <option>Fee Structure</option>
+            <option>Transport Facilities</option>
+            <option>Academic Query</option>
+            <option>Complaint / Feedback</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your Message *</label>
+          <textarea id="cMessage" rows="4" placeholder="Write your message here..." style="resize:vertical;"></textarea>
+        </div>
+        <button onclick="submitContactForm()" class="submit-btn">Send Message →</button>
+
+        <div style="display:flex;align-items:center;gap:16px;margin-top:24px;padding-top:24px;border-top:1px solid #e2e8f0;">
+          <div style="text-align:center;flex:1;">
+            <div style="font-size:1.5rem;">💬</div>
+            <div style="font-size:0.78rem;color:#718096;margin-top:4px;">WhatsApp Us</div>
+          </div>
+          <div style="text-align:center;flex:1;">
+            <div style="font-size:1.5rem;">📞</div>
+            <div style="font-size:0.78rem;color:#718096;margin-top:4px;">Call Anytime</div>
+          </div>
+          <div style="text-align:center;flex:1;">
+            <div style="font-size:1.5rem;">📍</div>
+            <div style="font-size:0.78rem;color:#718096;margin-top:4px;">Walk In</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:80px 0 100px;background:white;">
+  <div style="max-width:800px;margin:0 auto;padding:0 30px;">
+    <div style="text-align:center;margin-bottom:50px;">
+      <span class="section-label">Common Questions</span>
+      <h2 class="section-title" style="text-align:center;">Frequently Asked Questions</h2>
+    </div>
+    <div id="faqList">
+      <div class="faq-item reveal from-bottom">
+        <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:20px 24px;background:white;border:1.5px solid #e2e8f0;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:#0a1628;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;transition:all 0.3s;">
+          What are the school timings? <span class="faq-arrow" style="font-size:1.1rem;transition:transform 0.3s;">+</span>
+        </button>
+        <div class="faq-ans" style="display:none;padding:0 24px 20px;color:#718096;font-size:0.9rem;line-height:1.8;border:1.5px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px;margin-top:-10px;margin-bottom:10px;">
+          School hours are Monday to Saturday, 8:00 AM to 2:30 PM. The office remains open until 4:00 PM for administrative purposes.
+        </div>
+      </div>
+      <div class="faq-item reveal from-bottom" style="transition-delay:0.1s">
+        <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:20px 24px;background:white;border:1.5px solid #e2e8f0;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:#0a1628;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;transition:all 0.3s;">
+          How can I apply for admission? <span class="faq-arrow" style="font-size:1.1rem;transition:transform 0.3s;">+</span>
+        </button>
+        <div class="faq-ans" style="display:none;padding:0 24px 20px;color:#718096;font-size:0.9rem;line-height:1.8;border:1.5px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px;margin-top:-10px;margin-bottom:10px;">
+          You can apply online by filling our admission enquiry form on this website, or visit our school in person. Our team will guide you through the complete admission process.
+        </div>
+      </div>
+      <div class="faq-item reveal from-bottom" style="transition-delay:0.2s">
+        <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:20px 24px;background:white;border:1.5px solid #e2e8f0;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:#0a1628;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;transition:all 0.3s;">
+          Is transportation facility available? <span class="faq-arrow" style="font-size:1.1rem;transition:transform 0.3s;">+</span>
+        </button>
+        <div class="faq-ans" style="display:none;padding:0 24px 20px;color:#718096;font-size:0.9rem;line-height:1.8;border:1.5px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px;margin-top:-10px;margin-bottom:10px;">
+          Yes, we provide safe and comfortable school bus service covering major areas of Ghaziabad. GPS-tracked buses with trained drivers ensure your child's safety.
+        </div>
+      </div>
+      <div class="faq-item reveal from-bottom" style="transition-delay:0.3s">
+        <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:20px 24px;background:white;border:1.5px solid #e2e8f0;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:#0a1628;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;transition:all 0.3s;">
+          What is the medium of instruction? <span class="faq-arrow" style="font-size:1.1rem;transition:transform 0.3s;">+</span>
+        </button>
+        <div class="faq-ans" style="display:none;padding:0 24px 20px;color:#718096;font-size:0.9rem;line-height:1.8;border:1.5px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px;margin-top:-10px;margin-bottom:10px;">
+          The medium of instruction is English. We also place strong emphasis on Hindi as a second language and offer Sanskrit as an additional language option.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
+        <img src="images/logo.jpg" alt="Logo" style="height:45px;width:45px;border-radius:50%;object-fit:cover;border:2px solid var(--gold,#c9a227);" />
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:white;">Rising Star</div>
+          <div style="font-size:0.65rem;color:var(--gold,#c9a227);letter-spacing:2px;text-transform:uppercase;">Public School</div>
+        </div>
+      </div>
+      <p>Empowering young minds with knowledge, values, and the skills to succeed in a rapidly changing world.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">f</a>
+        <a href="#" class="social-link">📷</a>
+        <a href="#" class="social-link">▶</a>
+        <a href="#" class="social-link">𝕏</a>
+        <a href="#" class="social-link">💬</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">→ Home</a></li><li><a href="about.html">→ About Us</a></li><li><a href="gallery.html">→ Gallery</a></li><li><a href="contact.html">→ Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Admissions</h4><ul><li><a href="#">→ How to Apply</a></li><li><a href="#">→ Fee Structure</a></li><li><a href="#">→ Documents Required</a></li><li><a href="#">→ Scholarship</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><div class="contact-item"><span>📍</span><span>Sector 5, Ghaziabad, UP</span></div><div class="contact-item"><span>📞</span><span>+91 98765 43210</span></div><div class="contact-item"><span>✉️</span><span>info@risingstarpublicschool.in</span></div></div>
+  </div>
+  <div class="footer-bottom" style="max-width:1100px;margin:0 auto;"><span>© 2026 Rising Star Public School. All rights reserved.</span><span>Designed By Brandkit innovation</span></div>
+</footer>
+
+<style>
+  @media (max-width:900px) {
+    .contact-cards-resp, .contact-main-resp { grid-template-columns: 1fr !important; }
+  }
+</style>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+  function toggleMenu() {
+    const m = document.getElementById('mobileMenu');
+    m.style.display = m.style.display === 'none' ? 'flex' : 'none';
+  }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  function submitContactForm() {
+    const name = document.getElementById('cName').value;
+    const phone = document.getElementById('cPhone').value;
+    if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+    document.getElementById('formSuccess').style.display = 'block';
+    document.getElementById('cName').value = '';
+    document.getElementById('cPhone').value = '';
+    document.getElementById('cEmail').value = '';
+    document.getElementById('cSubject').value = '';
+    document.getElementById('cMessage').value = '';
+  }
+
+  function toggleFaq(btn) {
+    const ans = btn.nextElementSibling;
+    const arrow = btn.querySelector('.faq-arrow');
+    const isOpen = ans.style.display !== 'none';
+    ans.style.display = isOpen ? 'none' : 'block';
+    arrow.textContent = isOpen ? '+' : '−';
+    btn.style.borderColor = isOpen ? '#e2e8f0' : 'var(--navy,#0a1628)';
+    btn.style.color = isOpen ? '#0a1628' : 'var(--navy,#0a1628)';
+  }
+</script>
+</body>
+</html>
