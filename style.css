@@ -42,7 +42,11 @@ body {
   padding: 12px 30px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.3);
 }
-
+@media(max-width: 768px){
+    #navbar.scrolled{
+        padding: 5px 0px !important;
+    }
+}
 .nav-inner {
   display: flex;
   align-items: center;
